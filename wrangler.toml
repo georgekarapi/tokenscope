@@ -1,0 +1,44 @@
+name = "tokenscope-durable-object"
+main = "cloudflare/pricing-durable-object.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "tokenscope-durable-object-prod"
+
+[env.staging]
+name = "tokenscope-durable-object-staging"
+
+# Durable Object bindings
+[[durable_objects.bindings]]
+name = "PRICING_DURABLE_OBJECT"
+class_name = "PricingDurableObject"
+
+# Migration for Durable Objects
+[[migrations]]
+tag = "v1"
+new_classes = ["PricingDurableObject"]
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
+
+# Secrets (use wrangler secret put command)
+# ETHEREUM_RPC_URL = "your-ethereum-rpc-url"
+
+# Worker limits
+[limits]
+cpu_ms = 50000
+
+# Node.js compatibility for ethers.js
+node_compat = true
+
+# Development settings
+[dev]
+port = 8787
+local_protocol = "http"
+upstream_protocol = "https"
+
+# Analytics and monitoring
+[placement]
+mode = "smart" 

@@ -1,0 +1,20 @@
+{
+  "name": "tokenscope-durable-object",
+  "version": "1.0.0",
+  "description": "TokenScope Pricing Durable Object for real-time multi-DEX price feeds",
+  "main": "pricing-durable-object.ts",
+  "scripts": {
+    "dev": "wrangler dev --local",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "test": "wrangler dev --test-scheduled"
+  },
+  "dependencies": {
+    "ethers": "^6.13.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "wrangler": "^3.89.0",
+    "typescript": "^5.6.3"
+  }
+} 
